@@ -22,4 +22,5 @@ Archana Babu Rajendran
 <img src="https://github.com/scalableinternetservices/Match.edu/blob/master/Miscellaneous/member%20photos/Archana.jpg" width="40%">
 
 Mu Xu
+
 <img src="https://github.com/scalableinternetservices/Match.edu/blob/master/Miscellaneous/member%20photos/MuXu.jpg" width="40%">
