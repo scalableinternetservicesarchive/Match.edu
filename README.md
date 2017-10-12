@@ -14,5 +14,5 @@ https://docs.google.com/document/d/1QXrcu1QyHuB68VpvWMj9Bug2YvpUycqQc68XC_kn75o/
 Jiaheng Tang([@zedtang](https://github.com/zedtang))
 <img src="https://github.com/scalableinternetservices/Match.edu/blob/master/Miscellaneous/member%20photos/Jiaheng.jpg" width="40%">
 
-Yifu Luo
+Yifu Luo\n
 <img src="https://github.com/scalableinternetservices/Match.edu/blob/master/Miscellaneous/member%20photos/yifu.jpg" width="40%">
