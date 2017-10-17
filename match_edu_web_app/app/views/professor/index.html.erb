@@ -1,0 +1,16 @@
+<h1> Index page for professors </h1>
+
+<div>
+	<ul>
+		<% @professors.each do |professor| %>
+		<li>
+			<span><%= professor.name %></span>
+			<span><%= professor.email %></span>
+			<img src='<%= professor.picture %>'>
+			<span><%= professor.phone %></span>
+			<span><%= professor.school %></span>
+			<span><%= professor.department %></span>
+		</li>
+		<% end %>
+	</ul>
+</div>

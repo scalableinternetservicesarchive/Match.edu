@@ -1,4 +1,9 @@
 class ProfessorController < ApplicationController
+  
+  def index
+    @professors = Professor.all
+  end
+
   def new
   	@professor = Professor.new
   end
