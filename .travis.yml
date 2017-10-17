@@ -1,5 +1,6 @@
 language: ruby
-
+before_install:
+  - gem install bundler 1.16.0.pre.3
 before_script: cd match_edu_web_app
 
 rvm:
