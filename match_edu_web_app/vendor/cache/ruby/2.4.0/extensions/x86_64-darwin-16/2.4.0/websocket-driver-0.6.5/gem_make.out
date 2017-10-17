@@ -1,5 +1,5 @@
 current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/websocket-driver-0.6.5/ext/websocket-driver
-/Users/Adam/.rvm/rubies/ruby-2.4.1/bin/ruby -r ./siteconf20171017-49122-1yqw2lz.rb extconf.rb
+/Users/Adam/.rvm/rubies/ruby-2.4.1/bin/ruby -r ./siteconf20171017-66684-1exyw9d.rb extconf.rb
 creating Makefile
 
 current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/websocket-driver-0.6.5/ext/websocket-driver
@@ -12,4 +12,4 @@ linking shared-object websocket_mask.bundle
 
 current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/websocket-driver-0.6.5/ext/websocket-driver
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20171017-49122-1tcuvf5
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20171017-66684-1r198eq

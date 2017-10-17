@@ -1,5 +1,5 @@
 current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/ffi-1.9.18/ext/ffi_c
-/Users/Adam/.rvm/rubies/ruby-2.4.1/bin/ruby -r ./siteconf20171017-49122-1diyed4.rb extconf.rb
+/Users/Adam/.rvm/rubies/ruby-2.4.1/bin/ruby -r ./siteconf20171017-66684-1rqo7rn.rb extconf.rb
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi... yes
 checking for ffi_call() in -lffi... yes
@@ -58,4 +58,4 @@ linking shared-object ffi_c.bundle
 
 current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/ffi-1.9.18/ext/ffi_c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20171017-49122-8mcqdr
+/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20171017-66684-1yv4ndu
