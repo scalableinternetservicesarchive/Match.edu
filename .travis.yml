@@ -1,8 +1,7 @@
 language: ruby
 before_install:
-  - gem install bundler -v 1.16.0.pre.3
-  - rvm --version
-before_script: cd match_edu_web_app
-
+before_script: 
+  - cd match_edu_web_app
+  - ls
 rvm:
     - 2.4.1
