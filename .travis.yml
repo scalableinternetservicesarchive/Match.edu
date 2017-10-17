@@ -1,3 +1,4 @@
 language: ruby
+before_script: cd match_edu_web_app
 rvm:
     - 2.4.1
