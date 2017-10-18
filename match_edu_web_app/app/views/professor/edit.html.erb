@@ -1,0 +1,38 @@
+<h1>New Professor</h1>
+<div>
+	<%= form_for(@professor, url: {action: 'update'}) do |form| %>
+		  <div class="field">
+	      <%= form.label :name %>
+	      <%= form.text_field :name, id: :user_name %>
+		  </div>
+
+		  <div class="field">
+		    <%= form.label :email %>
+		    <%= form.text_field :email, id: :user_email %>
+		  </div>
+
+		  <div class="field">
+		    <%= form.label :picture %>
+		    <%= form.text_field :picture, id: :user_picture %>
+		  </div>
+
+		  <div class="field">
+		    <%= form.label :phone %>
+		    <%= form.text_field :phone, id: :user_phone %>
+		  </div>
+
+		  <div class="field">
+		    <%= form.label :school %>
+		    <%= form.text_field :school, id: :user_school %>
+		  </div>
+
+		  <div class="field">
+		    <%= form.label :department %>
+		    <%= form.text_field :department, id: :user_department %>
+		  </div>
+
+		  <div class="actions">
+		    <%= form.submit %>
+		  </div>
+	<% end %>
+</div>

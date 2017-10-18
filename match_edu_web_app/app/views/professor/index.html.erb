@@ -8,7 +8,8 @@
 			<span><%= professor.name %></span>
 			<span><%= professor.school %></span>
 			<span><%= professor.department %></span>
-			<span><%= link_to 'View profile', professor %></span>
+			<span><%= link_to 'View', professor %></span>
+			<span><%= link_to 'Edit', edit_professor_path(professor) %></span>
 		</li>
 		<% end %>
 	</ul>
