@@ -1,15 +1,14 @@
 <h1> Index page for professors </h1>
 
 <div>
+	<p><%= link_to 'Create new prfessor profile', new_professor_path %></p>
 	<ul>
 		<% @professors.each do |professor| %>
 		<li>
 			<span><%= professor.name %></span>
-			<span><%= professor.email %></span>
-			<img src='<%= professor.picture %>'>
-			<span><%= professor.phone %></span>
 			<span><%= professor.school %></span>
 			<span><%= professor.department %></span>
+			<span><%= link_to 'View profile', professor %></span>
 		</li>
 		<% end %>
 	</ul>

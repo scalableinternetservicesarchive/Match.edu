@@ -8,14 +8,22 @@ class ProfessorController < ApplicationController
   	@professor = Professor.new
   end
 
+  def show
+    @professor = Professor.find(params[:id])
+  end
+
   def create
   	#puts('Create method called..')
   	@professor = Professor.new(professor_params)
-  	if @professor.save
-  		render html: "Saved successfully"
-  	else
-  		render html: "Some error"
-  	end	
+  	respond_to do |format|
+      if @professor.save
+        format.html { redirect_to @professor, notice: 'Profile was successfully created.' }
+        #format.json { render :show, status: :created, location: @professor }
+      else
+        format.html { render :new }
+        #format.json { render json: @professor.errors, status: :unprocessable_entity }
+      end
+    end	
   end
 
   private
