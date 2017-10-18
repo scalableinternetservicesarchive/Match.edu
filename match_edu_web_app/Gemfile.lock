@@ -223,6 +223,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails-controller-testing (= 1.0.2)
+  rake (= 12.1.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -234,4 +235,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.3

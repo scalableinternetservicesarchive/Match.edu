@@ -1,0 +1,15 @@
+current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+/Users/Adam/.rvm/rubies/ruby-2.4.1/bin/ruby -r ./siteconf20171017-66684-1npcuth.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/Adam/Documents/MyCode/ruby/Match.edu/match_edu_web_app/vendor/cache/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20171017-66684-1amjsmg/bindex
