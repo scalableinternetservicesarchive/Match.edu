@@ -2,5 +2,6 @@ language: ruby
 before_install:
 before_script: 
   - cd match_edu_web_app
+  - bundle install --path vendor/cache
 rvm:
     - 2.4.1
