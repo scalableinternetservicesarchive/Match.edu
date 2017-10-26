@@ -1,10 +1,204 @@
-<h1><%= @professor.name %></h1>
-<p><%= link_to 'Home', root_path %></p>
-<div>
-	<p>Details</p>
-	<p><%= @professor.email %></p>
-	<img src='<%= @professor.picture %>'>
-	<p><%= @professor.phone %></p>
-	<p><%= @professor.school %></p>
-	<p><%= @professor.department %></p>
+<!-- Header -->
+<div class="allcontain">
+	<div class="header">
+			<ul class="socialicon">
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+			</ul>
+			<ul class="givusacall">
+				<li>Give us a call : +66666666 </li>
+			</ul>
+			<ul class="logreg">
+				<li><a href="login.html">Login </a> </li>
+				<li><a href="signup.html"><span class="register">Register</span></a></li>
+			</ul>
+	</div>
+	<!-- Navbar Up -->
+	<nav class="topnavbar navbar-default topnav">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+					<span class="sr-only"> Toggle navigaion</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!-- <a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a> -->
+			</div>	 
+		</div>
+		<div class="collapse navbar-collapse" id="upmenu">
+			<ul class="nav navbar-nav" id="navbarontop">
+				<li class="active"><a href="#">HOME</a> </li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
+					<ul class="dropdown-menu dropdowncostume">
+						<li><a href="#">Sport</a></li>
+						<li><a href="#">Old</a></li>
+						<li><a href="#">New</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DEALERS <span class="caret"></span></a>
+						<ul class="dropdown-menu dropdowncostume">
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="3">3</a></li>
+						</ul>
+				</li>
+				<li>
+					<a href="contact.html">CONTACT</a>
+ 
+				</li>
+				<button><span class="postnewcar">POST NEW CAR</span></button>
+			</ul>
+		</div>
+	</nav>
+</div>
+<!--_______________________________________ Carousel__________________________________ -->
+<div class="allcontain">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active head_image1">	
+				<div class="carousel-caption">
+					<h2>Porsche 356</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur ,<br>
+						sed do eiusmod tempor incididunt ut labore </p>
+				</div>
+			</div>
+			<div class="item head_image2" >
+				<div class="carousel-caption">
+					<h2>Porche</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur ,<br>
+						sed do eiusmod tempor incididunt ut labore </p>
+				</div>
+			</div>
+			<div class="item head_image3">
+				<div class="carousel-caption">
+					<h2>Car</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur ,<br>
+						sed do eiusmod tempor incididunt ut labore </p>
+				</div>
+			</div>
+		</div>
+        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
+		<nav class="navbar navbar-default midle-nav">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
+						<h1>SEARCH TEXT</h1>
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarmidle">
+				<div class="searchtxt">
+					<h1>SEARCH TEXT</h1>
+				</div>
+				<form class="navbar-form navbar-left searchformmargin" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control searchform" placeholder="Enter Keyword">
+					</div>
+				</form>
+				<ul class="nav navbar-nav navbarborder">
+					<li class="li-category">
+						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Category<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<ul class="dropdown-menu" id="mydd">
+							<li><a href="#">Epic</a></li>
+							<li><a href="#">Old</a></li>
+							<li><a href="#">New</a></li>
+						</ul>
+					</li>
+					<li class="li-minyear"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Min Year <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<ul class="dropdown-menu" id="mydd2">
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+						</ul>
+					</li>
+					<li class="li-maxyear"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Max Year <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<ul class="dropdown-menu" id="mydd3">
+							<li><a href="#">1900</a></li>
+							<li><a href="#">2000</a></li>
+							<li><a href="#">2016</a></li>
+						</ul>
+					</li>
+					<li class="li-slideprice">
+						<p> <label class="slidertxt" for="amount">Price </label>
+							<input class="priceslider" type="text" id="amount" readonly="readonly">
+						</p>
+							<div id="slider-range"></div>
+							
+					</li>
+					<li class="li-search"> <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button></li>
+				</ul>
+ 
+			</div>
+		</nav>
+	</div>
+</div>
+
+<!-- ____________________Featured Section ______________________________--> 
+<div class="allcontain">
+	<div class="feturedsection">
+		<h1 class="text-center"><span class="bdots">&bullet;</span>Professor<span class="carstxt">Page</span>&bullet;</h1>
+	</div>
+	<div class="row costumrow" >
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 img2colon" style="height: 100%">
+			<img src= 'http://www.cs.ucsb.edu/sites/cs.ucsb.edu/files/styles/portrait-full/public/faculty/images/matthew-turk_0.jpg?itok=Qu98srhX&c=d1bcd0f47e9a68775b3c5d6ad01ffaf8' style="margin-left: 20%; margin-top: 9%">
+		</div>
+		<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 txt1colon" style="width: 60%">
+			<div class="featurecontant" style="float: right; margin-top: 5%; margin-bottom: 5%">
+				<h1 style="margin-top: 4%"><%= @professor.name %></h1>
+				<p><%= link_to 'Home', root_path %></p>
+				<p><span style="font-weight: bold;">School: &nbsp; </span><%= @professor.school %><br>
+				<span style="font-weight: bold;">Department: &nbsp; </span><%= @professor.department %><br> 
+				<span style="font-weight: bold;">Phone: &nbsp; </span><%= @professor.phone %></p>
+				<span style="font-weight: bold;">Email: &nbsp; </span><%= @professor.email %></p>
+			
+				<p style="text-align: left; margin: 2%"><span style="font-weight: bold;">Bio: &nbsp </span> Matthew Turk is a professor of Computer Science and former chair of Media Arts and Technology at the University of California, Santa Barbara, where he co-directs the UCSB Four Eyes Lab, focused on the "four I's" of Imaging, Interaction, and Innovative Interfaces. He has worked at Martin Marietta Denver Aerospace, LIFIA/ENSIMAG (Grenoble, France), Teleos Research, and Microsoft Research, where he was a founding member of the Vision Technology Group. He is on the editorial board of the ACM Transactions on Intelligent Interactive Systems and the Journal of Image and Vision Computing and is on advisory boards for the International Conference on Multimodal Interfaces and the International Conference on Automatic Face and Gesture Recognition. Prof. Turk was a general chair of the 2006 ACM Multimedia Conference and the 2011 IEEE Conference on Automatic Face and Gesture Recognition and will be general chair of the 2014 IEEE Conference on Computer Vision and Pattern Recognition. He is an IEEE Fellow and the recipient of the 2011-2012 Fulbright-Nokia Distinguished Chair in Information and Communications Technologies.</p>
+
+				<p style="text-align: left; margin: 2%"><span style="font-weight: bold;">Research: &nbsp </span> Prof. Turk's main research interests are in computer vision and human-computer interaction, building interactive systems that see the world and react accordingly. Key application areas of this work include augmented reality, computational photography, mobile computing, and vision-based and multimodal interaction. His work is largely interdisciplinary, including collaborators from areas such as psychology, geography, electrical engineering, art, and music.</p>
+							
+				<p style="text-align: left; margin: 2%"><span style="font-weight: bold;">Publications: &nbsp</span> <a href="https://scholar.google.com/citations?user=KltleWgAAAAJ&hl=en">Google Scholar</a></p>	 								 				
+
+
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<!-- ______________________________________________________Bottom Menu ______________________________-->
+	<div class="bottommenu">
+		<<!-- div class="bottomlogo">
+		<span class="dotlogo">&bullet;</span><img src="image/collectionlogo1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
+		</div> -->
+		<ul class="nav nav-tabs bottomlinks">
+			<li role="presentation" ><a href="#/" role="button">ABOUT US</a></li>
+			<li role="presentation"><a href="#/">CATEGORIES</a></li>
+			<li role="presentation"><a href="#/">PREORDERS</a></li>
+			<li role="presentation"><a href="#/">CONTACT US</a></li>
+			<li role="presentation"><a href="#/">RECEIVE OUR NEWSLETTER</a></li>
+		</ul>
+		<p>"Lorem ipsum dolor sit amet, consectetur,  sed do eiusmod tempor incididunt <br>
+			eiusmod tempor incididunt </p>
+		 <img src="image/line.png" alt="line"> <br>
+		 <div class="bottomsocial">
+		 	<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-google-plus"></i></a>
+			<a href="#"><i class="fa fa-pinterest"></i></a>
+		</div>
+			<div class="footer">
+				<div class="copyright">
+				  &copy; Copy right 2016 | <a href="#">Privacy </a>| <a href="#">Policy</a>
+				</div>
+				<div class="atisda">
+					 Designed by <a href="#">Web Domus Italia - Web Agency </a> More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
+			</div>
+	</div>
 </div>
