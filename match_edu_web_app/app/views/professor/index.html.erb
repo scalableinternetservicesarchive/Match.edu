@@ -160,19 +160,25 @@
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
 							<h1><%= professor.name %></h1>
-							<p><%= professor.school %><br>
-			 						<%= professor.department %> </p>
-			 				<span><%= link_to 'View', professor %></span>
-							<span><%= link_to 'Edit', edit_professor_path(professor) %></span>
-			 				<button id="btnRM2"><%= link_to 'READ MORE', professor %></button>
-			 				<div id="readmore2">
-			 						<h1>Car Name</h1>
-			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br></p>
-			 						<button id="btnRL2">READ LESS</button>
+  							<p><%= professor.school %><br>
+ -			 						<%= professor.department %> </p>
+ -			 				<span><%= link_to 'View', professor %></span>
+ -							<span><%= link_to 'Edit', edit_professor_path(professor) %></span>
+ -			 				<button id="btnRM2"><%= link_to 'READ MORE', professor %></button>
+ -			 				<div id="readmore2">
+ -			 						<h1>Car Name</h1>
+ -			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
+ -			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
+ -			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
+ -			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
+ -			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br></p>
+ -			 						<button id="btnRL2">READ LESS</button>
+ -			 				</div>
+ +				 			<%= professor.department %><br>
+ +							Phone: 12435465<br>								
+ +				 			</p>
+ +			 				<p><%= link_to 'View', professor %> <%= link_to 'Edit', edit_professor_path(professor) %></p>
+ +			 				<button onclick = "{location.href = 'show.html'}">READ MORE</button>
 			 				</div>
 						</div>
 					</div>
