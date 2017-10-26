@@ -69,7 +69,7 @@
 			</div>
 			<div class="item head_image2" >
 				<div class="carousel-caption">
-					<h2>Porche</h2>
+					<h2>Porsche</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur ,<br>
 						sed do eiusmod tempor incididunt ut labore </p>
 				</div>
@@ -104,11 +104,12 @@
 				</form>
 				<ul class="nav navbar-nav navbarborder">
 					<li class="li-category">
-						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Category<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Research Area<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
 						<ul class="dropdown-menu" id="mydd">
-							<li><a href="#">Epic</a></li>
-							<li><a href="#">Old</a></li>
-							<li><a href="#">New</a></li>
+							<% @research_areas.each do |research_area| %>
+								<li><a href="#"><%= research_area.area%></a>
+								</li>
+							<% end %>	
 						</ul>
 					</li>
 					<li class="li-minyear"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Min Year <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
@@ -164,6 +165,10 @@
 				 			<%= professor.department %><br>
 							Phone: 12435465<br>								
 				 			</p>
+                            <p>Research Areas :</p>
+                            <% professor.research_areas.each do|research_area| %>
+                                <p><%= research_area.area %></p>
+                            <% end %>
 			 				<p><%= link_to 'View', professor %> <%= link_to 'Edit', edit_professor_path(professor) %></p>
 			 				<button onclick = "{location.href = 'show.html'}">READ MORE</button>
 						</div>

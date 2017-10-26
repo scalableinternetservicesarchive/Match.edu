@@ -22,8 +22,8 @@
 
 /match_edu_web_app/.DS_Store
 /match_edu_web_app/app/.DS_Store
-/match_edu_web_app/*.lock
-/match_edu_web_app/*.lock.orig
+#/match_edu_web_app/*.lock
+#/match_edu_web_app/*.lock.orig
 .DS_Store
 /match_edu_web_app/vendor/cache/*
 
