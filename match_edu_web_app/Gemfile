@@ -41,8 +41,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rake','12.1.0'
   gem 'selenium-webdriver'
-  #gem 'faker'
-  gem 'faker', github: 'stympy/faker'
+  gem 'faker'
 end
 
 group :development do
