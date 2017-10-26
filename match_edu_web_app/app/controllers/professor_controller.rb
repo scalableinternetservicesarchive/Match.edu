@@ -2,6 +2,7 @@ class ProfessorController < ApplicationController
   
   def index
     @professors = Professor.all
+    @research_areas = ResearchArea.all
   end
 
   def new

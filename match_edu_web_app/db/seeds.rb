@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Professor.destroy_all
+ResearchArea.destroy_all
 p "Cleared existing professor profiles"
+p "Cleared existing research areas"
 
 100.times do |index|
   Professor.create!(name: Faker::Name.unique.name,
@@ -17,5 +19,11 @@ p "Cleared existing professor profiles"
                 school: Faker::University.name,
                 department: Faker::Job.field) 
 end
+
+10.times do |index|
+  ResearchArea.create!(area: Faker::ProgrammingLanguage.unique.name) 
+end
+
  
 p "Created #{Professor.count} professor profiles"
+p "Created #{ResearchArea.count} research areas"
