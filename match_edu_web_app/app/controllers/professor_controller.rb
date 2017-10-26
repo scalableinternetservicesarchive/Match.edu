@@ -3,6 +3,11 @@ class ProfessorController < ApplicationController
   def index
     @professors = Professor.all
     @research_areas = ResearchArea.all
+    if params[:search]
+        @professors = Professor.search(params[:search]).order("created_at DESC")
+    else
+        @professor = Professor.all.order("created_at DESC")
+  end
   end
 
   def new
