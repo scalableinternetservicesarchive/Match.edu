@@ -11,18 +11,24 @@ ResearchArea.destroy_all
 p "Cleared existing professor profiles"
 p "Cleared existing research areas"
 
+research_areas = (1..10).to_a.map do |n|
+  ResearchArea.create!(area: Faker::ProgrammingLanguage.unique.name) 
+end
+
 100.times do |index|
-  Professor.create!(name: Faker::Name.unique.name,
+  professor = Professor.create!(name: Faker::Name.unique.name,
                 email: Faker::Internet.unique.email,
                 picture: "https://graydon.law/wp-content/themes/graydon/images/gravatar_default_550.jpg",
                 phone: Faker::PhoneNumber.cell_phone,
                 school: Faker::University.name,
                 department: Faker::Job.field) 
-end
 
-10.times do |index|
-  ResearchArea.create!(area: Faker::ProgrammingLanguage.unique.name) 
-end
+  professor.professor_research_areas.create(
+    research_area: research_areas[rand(research_areas.size)]  
+)
+end	
+
+
 
  
 p "Created #{Professor.count} professor profiles"

@@ -163,6 +163,10 @@
 							<h1><%= professor.name %></h1>
 							<p><%= professor.school %><br>
 			 						<%= professor.department %> </p>
+			 				<p>Research Areas :</p>
+			 				<% professor.research_areas.each do|research_area| %>
+			 				<p><%= research_area.area %></p>
+			 				<% end %>
 			 				<span><%= link_to 'View', professor %></span>
 							<span><%= link_to 'Edit', edit_professor_path(professor) %></span>
 			 				<button id="btnRM2"><%= link_to 'READ MORE', professor %></button>
