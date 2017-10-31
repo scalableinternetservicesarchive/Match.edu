@@ -1,0 +1,15 @@
+<h1> Index page for students </h1>
+
+<div>
+	<p><%= link_to 'Create new student profile', new_student_path %></p>
+	<ul>
+		<% @students.each do |student| %>
+		<li>
+			<span><%= student.name %></span>
+			<span><%= student.school %></span>
+			<span><%= student.department %></span>
+			<span><%= link_to 'View profile', student %></span>
+		</li>
+		<% end %>
+	</ul>
+</div>
