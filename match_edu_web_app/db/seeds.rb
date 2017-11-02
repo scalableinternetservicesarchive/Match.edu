@@ -22,9 +22,14 @@ end
                 phone: Faker::PhoneNumber.cell_phone,
                 school: Faker::University.name,
                 department: Faker::Job.field) 
+  student = Student.create!(name: Faker::Name.unique.name,
+                email: Faker::Internet.unique.email,
+                password: "password",
+                password_confirmation: "password")
+
 
   professor.professor_research_areas.create(
-    research_area: research_areas[rand(research_areas.size)]  
+  research_area: research_areas[rand(research_areas.size)]  
 )
 end	
 
