@@ -8,9 +8,6 @@ class StudentTest < ActiveSupport::TestCase
         @student = User.new(name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
   end
-  .
-  .
-  .
   test "password should be present (nonblank)" do
       @student.password = @student.password_confirmation = " " * 6
     assert_not @user.valid?
