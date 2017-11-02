@@ -1,38 +1,115 @@
-<h1>New Professor</h1>
+<!-- Header -->
+<div class="allcontain">
+	<div class="header" style="text-align: right; padding-right: 20px">			
+			<ul class="logreg">
+				<li><a href="admin.html"><- Go Back Home</a> </li>		
+			</ul>
+	</div>
+	
+</div>
+<!--_______________________________________ Carousel__________________________________ -->
+<div class="allcontain" >
+	<div id="carousel-up" class="carousel slide" data-ride="carousel" style="height: 135px">
+		<nav class="navbar navbar-default midle-nav">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
+					<h1>SEARCH TEXT</h1>
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarmidle"  >
+				<div class="searchtxt">
+					<h1>SEARCH TEXT</h1>
+				</div>				
+ 				
+ 				<ul class="nav navbar-nav navbarborder">
+					<li class="li-category">
+						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Research Areas<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<ul class="dropdown-menu" id="mydd">
+							<li><a href="#">Machine Learning</a></li>
+							<li><a href="#">Quantum Physics</a></li>
+							<li><a href="#">Ecnonomic</a></li>
+						</ul>
+					</li>
+					<li class="li-minyear"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Department <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<ul class="dropdown-menu" id="mydd2">
+							<li><a href="#">Computer Science</a></li>
+							<li><a href="#">History</a></li>
+							<li><a href="#">Electrical and Computer Engineering</a></li>
+						</ul>
+					</li>
+					<li class="li-maxyear"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">School <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<ul class="dropdown-menu" id="mydd3">
+							<li><a href=>UCSB</a></li>
+							<li><a href="#">Stanford</a></li>
+							<li><a href="#">UC Berkeley</a></li>
+						</ul>
+					</li>
+					<form class="navbar-form navbar-left searchformmargin" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control searchform" placeholder="Input Here">
+						</div>
+					</form>				
+					<!-- <li class="li-search"> <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button></li> -->
+					<a href="add_professor.html" class="button button-highlight button-pill button-large" style="margin-left: 10px;">+ Add New Professor</a>
+				</ul>
+
+			</div>
+		</nav>
+	</div>
+</div>
+
+
 <div>
-	<%= form_for(@professor, url: {action: 'update'}) do |form| %>
-		  <div class="field">
-	      <%= form.label :name %>
-	      <%= form.text_field :name, id: :user_name %>
-		  </div>
+	<!--contact-->
+	<div class="contact">
+		<div class="container">		
+			<%= form_for(@professor, url: {action: 'update'}) do |form| %>
+				  <div class="form-group">
+			      <%= form.label :name %>
+			      <%= form.text_field :name, id: :user_name, class: 'form-control' %>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :email %>
-		    <%= form.text_field :email, id: :user_email %>
-		  </div>
+				  <div class="form-group">
+				    <%= form.label :email %>
+				    <%= form.text_field :email, id: :user_email, class: 'form-control' %>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :picture %>
-		    <%= form.text_field :picture, id: :user_picture %>
-		  </div>
+				  <div class="form-group">
+				    <%= form.label :picture %>
+				    <%= form.text_field :picture, id: :user_picture, class: 'form-control' %>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :phone %>
-		    <%= form.text_field :phone, id: :user_phone %>
-		  </div>
+				  <div class="form-group">
+				    <%= form.label :phone %>
+				    <%= form.text_field :phone, id: :user_phone, class: 'form-control' %>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :school %>
-		    <%= form.text_field :school, id: :user_school %>
-		  </div>
+				  <div class="form-group">
+				    <%= form.label :school %>
+				    <%= form.text_field :school, id: :user_school, class: 'form-control' %>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :department %>
-		    <%= form.text_field :department, id: :user_department %>
-		  </div>
+				  <div class="form-group">
+				    <%= form.label :department %>
+				    <%= form.text_field :department, id: :user_department, class: 'form-control' %>
+				  </div>
 
-		  <div class="actions">
-		    <%= form.submit %>
-		  </div>
-	<% end %>
+				  <%= submit_tag "Submit", class: "btn btn-default" %>
+
+			<% end %>
+		</div>
+	</div>
+		<!--contact-->
+</div>
+
+<div class="footer">
+	<div class="copyright">
+		&copy; Copy right 2017 | <a href="#">Privacy </a>| <a href="#">Policy</a>
+	</div>
+	<div class="atisda">
+		 Designed by <a href="#">Mu Xu </a></div>
 </div>
