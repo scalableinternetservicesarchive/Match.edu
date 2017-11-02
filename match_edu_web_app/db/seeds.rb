@@ -11,8 +11,15 @@ ResearchArea.destroy_all
 p "Cleared existing professor profiles"
 p "Cleared existing research areas"
 
-research_areas = (1..10).to_a.map do |n|
-  ResearchArea.create!(area: Faker::ProgrammingLanguage.unique.name) 
+list_research_areas = ["Distributed Systems",
+						"Parallel Computing","Scalable Systems", 
+						"Networking", "Computer Security",
+            "Theoretical Computer Science",
+            "Cloud Computing", "Machine Learning",
+            "Operating Systems", "Artificial Intelligence"
+          ]
+research_areas = (0..9).to_a.map do |n|
+  ResearchArea.create!(area: list_research_areas[n]) 
 end
 
 100.times do |index|
