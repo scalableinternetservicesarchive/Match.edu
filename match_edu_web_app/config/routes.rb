@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'students/new'
-
+  post 'students/interest',  to: 'students#interest'
+  post 'professor/interest',  to: 'professor#interest'
   #get 'professor/new'
   #post 'professor/create',  to: 'professor#create'
   resources :professor

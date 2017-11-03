@@ -160,7 +160,26 @@
 			</div>
 		</div>
 	</div>
-
+	<div>
+	<h3>Interested students</h3>
+	<ul>
+	<% @matches.each do |student| %>
+	<li>
+	<% obj = @professor.professor_student_matches.find_by student_id: student.id %>
+	<%= student.name %>
+	<%= form_tag(professor_interest_path, method: "post") do %>
+		<%= hidden_field_tag(:professor_id, @professor.id) %>
+		<%= hidden_field_tag(:student_id, student.id) %>
+		<% if obj and obj.match %>
+			<span>Already approved</span>
+		<% else %>
+			<%= submit_tag("Accept") %>
+		<% end %>
+	<% end %>
+	</li>
+	<% end %>
+	</ul>
+	</div>
 	<br>
 	<br>
 

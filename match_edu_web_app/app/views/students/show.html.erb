@@ -9,3 +9,22 @@
     </section>
   </aside>
 </div>
+<div>
+<ul>
+<% @professors[0..9].each do |professor| %>
+<li>
+<h3><%= professor.name %></h3>
+	<% obj = professor.professor_student_matches.find_by student_id: @student.id %>
+	<%= form_tag(students_interest_path, method: "post") do %>
+		<%= hidden_field_tag(:professor_id, professor.id) %>
+		<%= hidden_field_tag(:student_id, @student.id) %>
+		<% if obj and obj.match %>
+			<span>Accepted</span>
+		<% else %>
+			<%= submit_tag("Interested") %>
+		<% end %>
+	<% end %>
+</li>
+<% end %>
+</ul>
+</div>
