@@ -1,6 +1,8 @@
 class Professor < ApplicationRecord
 	has_many :professor_research_areas
  	has_many :research_areas, :through => :professor_research_areas
+    has_many :professor_student_matchs
+    has_many :students, :through => :professor_student_matchs
     def self.search(search)
     	#Do a search for research areas get relevant ids
     	ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area LIKE ?", ["%#{search}%"])
