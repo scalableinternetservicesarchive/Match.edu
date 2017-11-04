@@ -13,13 +13,15 @@
 <ul>
 <% @professors[0..9].each do |professor| %>
 <li>
-<h3><%= professor.name %></h3>
+	<span><%= professor.name %></span>
 	<% obj = professor.professor_student_matches.find_by student_id: @student.id %>
-	<%= form_tag(students_interest_path, method: "post") do %>
+	<%= form_tag(students_interest_path, method: "post", style: "display:inline") do %>
 		<%= hidden_field_tag(:professor_id, professor.id) %>
 		<%= hidden_field_tag(:student_id, @student.id) %>
 		<% if obj and obj.match %>
-			<span>Accepted</span>
+			<span style="background-color:green;">Accepted</span>
+		<% elsif obj and !obj.match %>
+			<span style="background-color:blue;">Awaiting approval</span>
 		<% else %>
 			<%= submit_tag("Interested") %>
 		<% end %>

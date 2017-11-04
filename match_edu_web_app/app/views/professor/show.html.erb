@@ -166,12 +166,12 @@
 	<% @matches.each do |student| %>
 	<li>
 	<% obj = @professor.professor_student_matches.find_by student_id: student.id %>
-	<%= student.name %>
-	<%= form_tag(professor_interest_path, method: "post") do %>
+	<span><%= student.name %></span>
+	<%= form_tag(professor_interest_path, method: "post", style: "display:inline") do %>
 		<%= hidden_field_tag(:professor_id, @professor.id) %>
 		<%= hidden_field_tag(:student_id, student.id) %>
 		<% if obj and obj.match %>
-			<span>Already approved</span>
+			<span style="background-color:green;">Already approved</span>
 		<% else %>
 			<%= submit_tag("Accept") %>
 		<% end %>
