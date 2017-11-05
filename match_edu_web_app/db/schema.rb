@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102022006) do
+ActiveRecord::Schema.define(version: 20171103042857) do
 
   create_table "professor_research_areas", force: :cascade do |t|
     t.integer "professor_id"
     t.integer "research_area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "professor_student_matches", force: :cascade do |t|
+    t.integer "professor_id"
+    t.integer "student_id"
+    t.boolean "match"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

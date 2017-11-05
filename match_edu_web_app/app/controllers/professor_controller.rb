@@ -14,8 +14,22 @@ class ProfessorController < ApplicationController
   	@professor = Professor.new
   end
 
+  def interest
+    puts(params[:professor_id])
+    puts(params[:student_id])
+    prof = Professor.find(params[:professor_id])
+    match = prof.professor_student_matches.find_by student_id: params[:student_id]
+    if match.update_attribute(:match, true)
+      puts('update successful')
+    else
+      puts('Some error occured')
+    end
+    puts('Interest function called for professor...')
+  end
+
   def show
     @professor = Professor.find(params[:id])
+    @matches = @professor.students
   end
 
   def edit
