@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :students
   get 'recommendations', to: 'students#recommendations'
   get 'admin', to: 'professor#admin'
-  get 'login', to: 'professor#login'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
