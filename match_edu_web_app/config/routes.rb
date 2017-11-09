@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'students/new'
   post 'students/interest',  to: 'students#interest'
   post 'professor/interest',  to: 'professor#interest'
@@ -11,4 +13,8 @@ Rails.application.routes.draw do
   get 'recommendations', to: 'students#recommendations'
   get 'admin', to: 'professor#admin'
   get 'login', to: 'professor#login'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+>>>>>>> Stashed changes
 end

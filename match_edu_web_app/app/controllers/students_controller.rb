@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
   def show
       @student = Student.find(params[:id])
       @professors = Professor.all
+      @recommend = Professor.searchByInterest(@student.researcharea).order("created_at DESC")
   end
 
   def interest
@@ -20,6 +21,8 @@ class StudentsController < ApplicationController
   def create
       @student = Student.new(user_params)
       if @student.save
+          log_in @student
+        flash[:success] = "Welcome to the Sample App!"
         redirect_to @student
     else
       render 'new'

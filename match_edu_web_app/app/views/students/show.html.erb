@@ -11,6 +11,18 @@
 </div>
 <div>
 <ul>
+<h1>
+    recommend professors
+</h1>
+<% @recommend[0..9].each do |professor| %>
+<li>
+<span><%= professor.name %></span>
+</li>
+<% end %>
+<h1>
+    Pending request
+</h1>
+    
 <% @professors[0..9].each do |professor| %>
 <li>
 	<span><%= professor.name %></span>

@@ -8,6 +8,7 @@
 
 Professor.destroy_all
 ResearchArea.destroy_all
+Student.destroy_all
 p "Cleared existing professor profiles"
 p "Cleared existing research areas"
 
@@ -23,7 +24,8 @@ research_areas = (0..9).to_a.map do |n|
 end
 
 100.times do |index|
-  professor = Professor.create!(name: Faker::Name.unique.name,
+  professor = Professor.create!(    
+                name: Faker::Name.unique.name,
                 email: Faker::Internet.unique.email,
                 picture: "https://graydon.law/wp-content/themes/graydon/images/gravatar_default_550.jpg",
                 phone: Faker::PhoneNumber.cell_phone,
@@ -32,7 +34,8 @@ end
   student = Student.create!(name: Faker::Name.unique.name,
                 email: Faker::Internet.unique.email,
                 password: "password",
-                password_confirmation: "password")
+                password_confirmation: "password",
+      researcharea:list_research_areas[index%10])
 
 
   professor.professor_research_areas.create(
