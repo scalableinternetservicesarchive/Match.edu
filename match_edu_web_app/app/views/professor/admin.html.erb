@@ -52,11 +52,13 @@
 					</li>
 					<form class="navbar-form navbar-left searchformmargin" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control searchform" placeholder="Input Here">
+							<%= form_tag(root_path, :method => "get", id: "search-form", class: "form-control searchform") do %>
+    						<%= text_field_tag :search, params[:search], placeholder: "Search Professors", class: "form-control searchform" %>
+    						<%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
+    						<% end %>
 						</div>
-					</form>				
-					<!-- <li class="li-search"> <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button></li> -->
-					<a href="add_professor.html" class="button button-highlight button-pill button-large" style="margin-left: 10px;">+ Add New Professor</a>
+					</form>	
+					<a href="/professor/new" class="button button-highlight button-pill button-large" style="margin-left: 10px;">+ Add New Professor</a>
 				</ul>
 
 			</div>

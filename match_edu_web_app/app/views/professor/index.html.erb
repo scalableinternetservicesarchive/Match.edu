@@ -109,12 +109,14 @@
 							<li><a href="#">2016</a></li>
 						</ul>
 					</li>
-					<div class="input-group"> 
-						<%= form_tag(root_path, :method => "get", id: "search-form", class: "navbar-form navbar-left searchformmargin") do %>
-    						<%= text_field_tag :search, params[:search], placeholder: "Search Professors", class: "form-control" %>
-    						<%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+					<form class="navbar-form navbar-left searchformmargin" role="search">
+						<div class="form-group">
+							<%= form_tag(root_path, :method => "get", id: "search-form", class: "form-control searchform") do %>
+    						<%= text_field_tag :search, params[:search], placeholder: "Search Professors", class: "form-control searchform" %>
+    						<%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
     						<% end %>
-    					</div>
+						</div>
+					</form>	
 				</ul>
  
 			</div>
