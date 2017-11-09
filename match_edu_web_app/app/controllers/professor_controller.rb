@@ -64,6 +64,20 @@ class ProfessorController < ApplicationController
     end 
   end
 
+  def admin
+    @professors = Professor.all
+    @research_areas = ResearchArea.all
+    if params[:search]
+        @professors = Professor.search(params[:search]).order("created_at DESC")
+    else
+        @professor = Professor.all.order("created_at DESC")
+    end
+  end
+
+  def login
+
+  end
+  
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -33,5 +33,15 @@ class StudentsController < ApplicationController
          params.require(:student).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-end
+
+    def recommendations
+      @professors = Professor.all
+      @research_areas = ResearchArea.all
+      if params[:search]
+          @professors = Professor.search(params[:search]).order("created_at DESC")
+      else
+          @professor = Professor.all.order("created_at DESC")
+      end
+    end
+  end
 
