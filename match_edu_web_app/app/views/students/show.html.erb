@@ -17,6 +17,7 @@
 <% @recommend[0..9].each do |professor| %>
 <li>
 <span><%= professor.name %></span>
+<p><%= link_to 'View', professor %></p>
 </li>
 <% end %>
 <h1>
