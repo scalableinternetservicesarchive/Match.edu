@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
         @student = Student.new
   end
      def user_params
-         params.require(:student).permit(:name, :email, :password,
+         params.require(:student).permit(:name, :email, :researcharea,:password,
                                    :password_confirmation)
     end
 
