@@ -11,7 +11,7 @@
 
 <!--_______________________________________ Carousel__________________________________ -->
 <div class="allcontain" >
-	<div id="carousel-up" class="carousel slide" data-ride="carousel" style="height: 135px">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel" style="height: 130px">
 		<nav class="navbar navbar-default midle-nav">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
@@ -54,15 +54,17 @@
 						<div class="form-group">
 							<%= form_tag(root_path, :method => "get", id: "search-form", class: "form-control searchform") do %>
     						<%= text_field_tag :search, params[:search], placeholder: "Search Professors", class: "form-control searchform" %>
-    						<%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
+    						<%= submit_tag "Search", :name => nil, class: 'btn btn-warning btn-lg' %>
+    						
     						<% end %>
 						</div>
 					</form>	
-					<a href="/professor/new" class="button button-highlight button-pill button-large" style="margin-left: 10px;">+ Add New Professor</a>
+					
 				</ul>
 
+				<a href="/professor/new" class="btn btn-warning btn-lg button-pill " style="float: right; margin-right: 100px">+ Add New Professor</a>
 			</div>
-		</nav>
+		</nav> 
 	</div>
 </div>
 
