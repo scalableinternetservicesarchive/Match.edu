@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
   def show
       @student = Student.find(params[:id])
       @professors = Professor.all
+      @research_areas = ResearchArea.all
       @recommend = Professor.searchByInterest(@student.researcharea).order("created_at DESC")
   end
 
