@@ -98,6 +98,27 @@
 				    <%= form.text_field :department, id: :user_department, class: 'form-control' %>
 				  </div>
 
+				  <div>
+				  	<ul>
+				  		<% @professor.research_areas.each do |res_area| %>
+				  		<li>
+				  			<%= res_area.area%>
+				  		</li>
+				  		<% end %>
+				  	</ul>
+				  </div>
+				  <div class="form-group">
+			      	<label for="add_remove">Modify Research interests</label>
+					<select name="add_remove" id="add_remove">
+			  			<option value="add">Add</option>
+			 			<option value="remove">Remove</option>
+					</select>
+		 		  </div>
+				  <div class="form-group">
+				  	<select name="research_area_ids" id="research_area_ids">
+				  	<%= options_from_collection_for_select(@research_areas, :id, :area) %>
+				  </div>
+				  <br>
 				  <%= submit_tag "Submit", class: "btn btn-default" %>
 
 			<% end %>

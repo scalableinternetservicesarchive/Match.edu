@@ -34,6 +34,7 @@ class ProfessorController < ApplicationController
 
   def edit
     @professor = Professor.find(params[:id])
+    @research_areas = ResearchArea.all
   end
 
   def create
@@ -51,15 +52,36 @@ class ProfessorController < ApplicationController
   end
 
   def update
-    #puts('Update method called..')
+    puts('Update method called..')
     @professor = Professor.find(params[:id])
+    action = params[:add_remove]
+    research_id = params[:research_area_ids]
+    match = ProfessorResearchArea.where(professor_id:params[:id],research_area_id: research_id)
+    success = false
+    puts(match)
+    puts(match.size)
+    puts(action)
     respond_to do |format|
       if @professor.update(professor_params)
-        format.html { redirect_to @professor, notice: 'Profile was successfully created.' }
+        success = true
+        if (action == "add") && (match.size == 0)
+          puts("Should create new record here...")
+          obj = ProfessorResearchArea.create!(professor_id:params[:id],research_area_id: research_id)
+          if obj
+            success = true
+          end
+        elsif (action == "remove") && (match.size > 0)
+          ProfessorResearchArea.delete(match[0][:id])
+          success = true
+        else
+          success = true
+        end
         #format.json { render :show, status: :created, location: @professor }
+      end
+      if success
+        format.html { redirect_to @professor, notice: 'Profile was successfully updated' }
       else
         format.html { render :new }
-        #format.json { render json: @professor.errors, status: :unprocessable_entity }
       end
     end 
   end

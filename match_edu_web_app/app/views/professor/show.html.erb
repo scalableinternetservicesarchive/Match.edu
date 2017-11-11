@@ -162,7 +162,17 @@
 
 				<p style="text-align: left; margin: 2%"><span style="font-weight: bold;">Research: &nbsp </span> Prof. Turk's main research interests are in computer vision and human-computer interaction, building interactive systems that see the world and react accordingly. Key application areas of this work include augmented reality, computational photography, mobile computing, and vision-based and multimodal interaction. His work is largely interdisciplinary, including collaborators from areas such as psychology, geography, electrical engineering, art, and music.</p>
 							
-				<p style="text-align: left; margin: 2%"><span style="font-weight: bold;">Publications: &nbsp</span> <a href="https://scholar.google.com/citations?user=KltleWgAAAAJ&hl=en">Google Scholar</a></p>	 								 				
+				<p style="text-align: left; margin: 2%"><span style="font-weight: bold;">Publications: &nbsp</span> <a href="https://scholar.google.com/citations?user=KltleWgAAAAJ&hl=en">Google Scholar</a></p>
+
+				<div>
+				  	<ul>
+				  		<% @professor.research_areas.each do |res_area| %>
+				  		<li>
+				  			<%= res_area.area%>
+				  		</li>
+				  		<% end %>
+				  	</ul>
+				 </div> 								 				
 
 
 			</div>
