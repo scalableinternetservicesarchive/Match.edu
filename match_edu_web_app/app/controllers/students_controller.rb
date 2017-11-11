@@ -5,6 +5,9 @@ class StudentsController < ApplicationController
       @professors = Professor.all
       @research_areas = ResearchArea.all
       @recommend = Professor.searchByInterest(@student.researcharea).order("created_at DESC")
+      if params[:search]
+        @recommend = Professor.search(params[:search]).order("created_at DESC")
+    end
   end
 
   def interest
