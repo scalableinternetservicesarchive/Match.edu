@@ -7,7 +7,7 @@ class ProfessorController < ApplicationController
         @professors = Professor.search(params[:search]).order("created_at DESC")
     else
         @professor = Professor.all.order("created_at DESC")
-  end
+    end
   end
 
   def new
@@ -73,6 +73,8 @@ class ProfessorController < ApplicationController
         @professor = Professor.all.order("created_at DESC")
     end
   end
+
+  
 
   def login
 

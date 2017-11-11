@@ -141,10 +141,9 @@
 						<div class="featurecontant">
 							<h1><%= professor.name %></h1>
 							<p><%= professor.school %><br>
-				 			<%= professor.department %><br>
-							Phone: 12435465<br>								
+				 			Department of <%= professor.department %><br>				
 				 			</p>
-                            <p>Research Areas :</p>
+                 
                             <% professor.research_areas.each do|research_area| %>
                                 <p><%= research_area.area %></p>
                             <% end %>
