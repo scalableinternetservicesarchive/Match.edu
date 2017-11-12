@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-
-  get 'students/new'
   post 'students/interest',  to: 'students#interest'
   post 'professor/interest',  to: 'professor#interest'
   #get 'professor/new'

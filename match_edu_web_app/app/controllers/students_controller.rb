@@ -19,6 +19,26 @@ class StudentsController < ApplicationController
       puts("Interest method was called yo!")
   end
 
+  def edit
+    @student = Student.find(params[:id])
+    @research_areas = ResearchArea.all
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    #puts(params[:student])
+    @student.attributes = user_params_update
+    @student.skip_password_validation = true
+    respond_to do |format|
+      if @student.save
+        format.html { redirect_to @student, notice: 'Profile was successfully updated' }
+      else
+        #Rails.logger.info(@student.errors.messages.inspect)
+        format.html { redirect_to @student, notice: 'There was some error' }
+      end
+    end
+  end
+
   def create
       @student = Student.new(user_params)
       if @student.save
@@ -36,6 +56,10 @@ class StudentsController < ApplicationController
      def user_params
          params.require(:student).permit(:name, :email, :researcharea,:password,
                                    :password_confirmation)
+    end
+
+    def user_params_update
+         params.require(:student).permit(:name, :email, :researcharea)
     end
 
     def recommendations

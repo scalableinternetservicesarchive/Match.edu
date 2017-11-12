@@ -52,15 +52,11 @@ class ProfessorController < ApplicationController
   end
 
   def update
-    puts('Update method called..')
     @professor = Professor.find(params[:id])
     action = params[:add_remove]
     research_id = params[:research_area_ids]
     match = ProfessorResearchArea.where(professor_id:params[:id],research_area_id: research_id)
     success = false
-    puts(match)
-    puts(match.size)
-    puts(action)
     respond_to do |format|
       if @professor.update(professor_params)
         success = true
