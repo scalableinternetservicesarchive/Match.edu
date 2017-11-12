@@ -2,7 +2,7 @@
 <div class="allcontain">
 	<div class="header" style="text-align: right; padding-right: 20px">			
 			<ul class="logreg">
-				<li><a href="admin.html">Home</a> </li>		
+				<li><a href="/admin">Home</a> </li>		
 			</ul>
 	</div>
 	
@@ -82,10 +82,9 @@
 						<div class="featurecontant">
 							<h1><%= professor.name %></h1>
 							<p><%= professor.school %><br>
-				 			<%= professor.department %><br>
-							Phone: 12435465<br>								
+				 			Department of <%= professor.department %><br>		
 				 			</p>
-                            <p>Research Areas :</p>
+                 
                             <% professor.research_areas.each do|research_area| %>
                                 <p><%= research_area.area %></p>
                             <% end %>
@@ -98,14 +97,11 @@
 		<% end %>
 		</div>
 	</div>
+	<div class="latestcars">
+	<ul class="nav nav-tabs navbar-left latest-navleft">
+	</ul>
 	
-	<div class="bottommenu">
-		 <img src="/assets/image/line.png" alt="line"> <br>
-			<div class="footer" style="text-align: right; padding-right: 20px">
-				<div class="Copyright" style="text-align: left; padding-left: 30px">
-				  &copy; Copyright 2017 Match.edu</a>
-				</div>
-	
-		</div>
-</div>
+	<div class="latestcars">
+	<ul class="nav nav-tabs navbar-left latest-navleft">
+	</ul>
 

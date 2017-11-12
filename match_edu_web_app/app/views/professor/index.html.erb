@@ -47,7 +47,6 @@
 	</nav>
 </div>
 
-<li><%= link_to "Log in", login_path %></li>
 <!--_______________________________________ Carousel__________________________________ -->
 <div class="allcontain">
 	<div id="carousel-up" class="carousel slide" data-ride="carousel">
@@ -126,11 +125,6 @@
 	</div>
 </div>
 
-<h1> Index page for professors </h1>
-
-<div>
-	<p><%= link_to 'Create new professor profile', new_professor_path %></p>
-</div>
 <!-- ____________________Featured Section ______________________________--> 
 <div class="allcontain">
 	<div class="feturedsection">
@@ -147,10 +141,9 @@
 						<div class="featurecontant">
 							<h1><%= professor.name %></h1>
 							<p><%= professor.school %><br>
-				 			<%= professor.department %><br>
-							Phone: 12435465<br>								
+				 			Department of <%= professor.department %><br>				
 				 			</p>
-                            <p>Research Areas :</p>
+                 
                             <% professor.research_areas.each do|research_area| %>
                                 <p><%= research_area.area %></p>
                             <% end %>
@@ -167,24 +160,5 @@
 	<ul class="nav nav-tabs navbar-left latest-navleft">
 	</ul>
 
-	<!-- ______________________________________________________Bottom Menu ______________________________-->
-	<div class="bottommenu">
-		<ul class="nav nav-tabs bottomlinks">
-			<li role="presentation" ><a href="#/" role="button">ABOUT US</a></li>
-			<li role="presentation"><a href="#/">CATEGORIES</a></li>
-			<li role="presentation"><a href="#/">PREORDERS</a></li>
-			<li role="presentation"><a href="#/">CONTACT US</a></li>
-			<li role="presentation"><a href="#/">RECEIVE OUR NEWSLETTER</a></li>
-		</ul>
-		 <img src="/assets/image/line.png" alt="line"> <br>
-			<div class="footer" style="text-align: right; padding-right: 20px">
-				<div class="Copyright" style="text-align: left; padding-left: 30px">
-				  &copy; Copyright 2017 Match.edu</a>
-				</div>
-				<ul class="logreg">
-				<li><a href="/admin">Admin </a></li>
-			</ul>
-			
-		</div>
-</div>
+	
 
