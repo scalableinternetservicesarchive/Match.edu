@@ -126,8 +126,15 @@
 
 <!-- ____________________Featured Section ______________________________--> 
 <div class="allcontain">
+	<h1>
+       <%= gravatar_for @student %>
+       <%= @student.name %>
+       (<%= @student.researcharea %>)
+    </h1>
+    <p><%= link_to 'Edit profile', edit_student_path(@student) %></p>
+
 	<div class="feturedsection">
-		<h1 class="text-center"><span class="bdots">&bullet;</span>Recommendated<span class="carstxt">Professors</span>&bullet;</h1>
+		<h1 class="text-center"><span class="bdots">&bullet;</span>Recommended<span class="carstxt">Professors</span>&bullet;</h1>
 	</div>
 	<div class="feturedimage">
 			<% @recommend[0..9].each do |professor| %>
