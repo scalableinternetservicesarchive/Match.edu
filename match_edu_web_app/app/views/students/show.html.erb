@@ -149,12 +149,28 @@
 							<p><%= professor.school %><br>
 				 			Department of <%= professor.department %><br>				
 				 			</p>
-                 
                             <% professor.research_areas.each do|research_area| %>
                                 <p><%= research_area.area %></p>
                             <% end %>
-			 				<p><%= link_to 'View', professor %> <%= link_to 'Edit', edit_professor_path(professor) %></p>
-			 				<button ><%= link_to 'READ MORE', professor %></button>
+			 				<button class="btn"><%= link_to 'Read More', professor %></button>
+			 				<% obj = professor.professor_student_matches.find_by student_id: @student.id %>
+							<%= form_tag(students_interest_path, method: "post", style: "display:inline") do %>
+							<%= hidden_field_tag(:professor_id, professor.id) %>
+							<%= hidden_field_tag(:student_id, @student.id) %>
+							<% if obj and obj.match %>
+							<div class="featurecontant">
+								<p>Accepted</p>
+							</div>
+							<% elsif obj and !obj.match %>
+							<div class="featurecontant">
+								<p>Awaiting approval</p>
+							</div>
+							<% else %>
+							<div class="buttonHolder" style="text-align: center;">
+								<%= submit_tag "Interested"%>
+							</div>
+							<% end %>
+						<% end %>
 						</div>
 					</div>
 				</div>
@@ -163,54 +179,10 @@
 	</div>
 </div>
 
-<!-- <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-          <%= gravatar_for @student %>
-          <%= @student.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
-<div>
-<ul> -->
 
 <div class="latestcars">
 	<ul class="nav nav-tabs navbar-left latest-navleft">
 	</ul>
-	
-
-<div class="allcontain">
-	<div class="feturedsection">
-		<h1 class="text-center"><span class="bdots">&bullet;</span>Interested<span class="carstxt">Professors</span>&bullet;</h1>
-	</div>
-	<div class="feturedimage">
-		<ul>
-			<% @professors[0..9].each do |professor| %>
-			<li>
-			<span><%= professor.name %></span>
-			<% obj = professor.professor_student_matches.find_by student_id: @student.id %>
-			<%= form_tag(students_interest_path, method: "post", style: "display:inline") do %>
-				<%= hidden_field_tag(:professor_id, professor.id) %>
-				<%= hidden_field_tag(:student_id, @student.id) %>
-				<% if obj and obj.match %>
-					<span style="background-color:green;">Accepted</span>
-				<% elsif obj and !obj.match %>
-					<span style="background-color:blue;">Awaiting approval</span>
-				<% else %>
-					<%= submit_tag("Interested") %>
-				<% end %>
-			<% end %>
-			</li>
-			<% end %>
-		</ul>
-	</div>
-
-
-</div>
-	
-
 	
 
 
