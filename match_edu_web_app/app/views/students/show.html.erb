@@ -2,8 +2,8 @@
 <div class="allcontain">
 	<div class="header" style="text-align: right; padding-right: 20px">			
 			<ul class="logreg">
-				<li><a href="login.html">Login </a> </li>
-				<li><a href="/students/new"><span class="register">Register</span></a></li>
+				<li><a>Hi, <%= @student.name %></a> </li>
+				<li><a href="/students/new"><span class="register">Log out</span></a></li>
 			</ul>
 	</div>
 	<!-- Navbar Up -->
@@ -20,28 +20,19 @@
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="/">HOME</a> </li>
-				<li class="dropdown">
+				<li class="active"><a href="">HOME</a> </li>
+				<!-- <li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
 						<li><a href="#">Sport</a></li>
 						<li><a href="#">Old</a></li>
 						<li><a href="#">New</a></li>
 					</ul>
-				</li>
-				<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DEALERS <span class="caret"></span></a>
-						<ul class="dropdown-menu dropdowncostume">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="3">3</a></li>
-						</ul>
-				</li>
-				<li>
-					<a href="contact.html">My Recommendations</a>
- 
-				</li>
-				<button><span class="postnewcar">POST NEW CAR</span></button>
+				</li> -->
+				<li><%= link_to 'My Profile', edit_student_path(@student) %></li>
+				<li><a href="#">My Recommendations</a></li>
+				<li><a href="">My Messages</a></li>
+				<!-- <button><span class="postnewcar">POST NEW CAR</span></button> -->
 			</ul>
 		</div>
 	</nav>
@@ -126,12 +117,7 @@
 
 <!-- ____________________Featured Section ______________________________--> 
 <div class="allcontain">
-	<h1>
-       <%= gravatar_for @student %>
-       <%= @student.name %>
-       (<%= @student.researcharea %>)
-    </h1>
-    <p><%= link_to 'Edit profile', edit_student_path(@student) %></p>
+	
 
 	<div class="feturedsection">
 		<h1 class="text-center"><span class="bdots">&bullet;</span>Recommended<span class="carstxt">Professors</span>&bullet;</h1>
