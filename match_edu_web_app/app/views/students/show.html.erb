@@ -139,7 +139,7 @@
                             <% professor.research_areas.each do|research_area| %>
                                 <p><%= research_area.area %></p>
                             <% end %>
-			 				<button class="btn"><%= link_to 'Read More', professor %></button>
+			 				
 			 				<% obj = professor.professor_student_matches.find_by student_id: @student.id %>
 							<%= form_tag(students_interest_path, method: "post", style: "display:inline") do %>
 							<%= hidden_field_tag(:professor_id, professor.id) %>
@@ -153,9 +153,9 @@
 								<p>Awaiting approval</p>
 							</div>
 							<% else %>
-							<div class="buttonHolder" style="text-align: center;">
-								<%= submit_tag "Interested"%>
-							</div>
+							
+							<%= submit_tag "Interested", class: 'btn btn-danger', style: 'margin-top: 30px; margin-bottom: 30px; margin-left: 50px'%>
+							<%= link_to 'Read More', professor, class: 'btn btn-warning', style: 'float: right; margin-top: 30px; margin-bottom: 30px; margin-right: 50px' %>
 							<% end %>
 						<% end %>
 						</div>
