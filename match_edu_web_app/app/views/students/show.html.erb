@@ -101,7 +101,7 @@
 							<li><a href="#">2016</a></li>
 						</ul>
 					</li>
-					<form class="navbar-form navbar-left searchformmargin" role="search">
+					<form class="navbar-form navbar-lef searchformmargin" role="search">
 						<div class="form-group">
 							<%= form_tag(root_path, :method => "get", id: "search-form", class: "form-control searchform") do %>
     						<%= text_field_tag :search, params[:search], placeholder: "Search Professors", class: "form-control searchform" %>
@@ -145,18 +145,20 @@
 							<%= hidden_field_tag(:professor_id, professor.id) %>
 							<%= hidden_field_tag(:student_id, @student.id) %>
 							<% if obj and obj.match %>
-							<div class="featurecontant">
-								<p>Accepted</p>
-							</div>
+							<p class= 'btn btn-success' style= 'margin-top: 30px; margin-bottom: 30px; margin-left: 50px'>Accepted</p>
+
 							<% elsif obj and !obj.match %>
-							<div class="featurecontant">
-								<p>Awaiting approval</p>
-							</div>
-							<% else %>
-							
-							<%= submit_tag "Interested", class: 'btn btn-danger', style: 'margin-top: 30px; margin-bottom: 30px; margin-left: 50px'%>
-							<%= link_to 'Read More', professor, class: 'btn btn-warning', style: 'float: right; margin-top: 30px; margin-bottom: 30px; margin-right: 50px' %>
+							<p class= 'btn btn-primary' style= 'margin-top: 30px; margin-bottom: 30px; margin-left: 50px'>Awaiting</p>
+				
+							<% else %>							
+							<%= submit_tag "Interested", class: 'btn btn-info', style: 'margin-top: 30px; margin-bottom: 30px; margin-left: 50px'%>
+
 							<% end %>
+
+
+							<%= link_to 'Read More', professor, class: 'btn btn-warning', style: 'float: right; margin-top: 30px; margin-bottom: 30px; margin-right: 50px' %>
+							
+
 						<% end %>
 						</div>
 					</div>
