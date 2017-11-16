@@ -86,7 +86,6 @@
 					<span class="icon-bar"></span>
 				</button>
 			</div>
-<<<<<<< HEAD
 			<div class="collapse navbar-collapse" id="navbarmidle">
 				<div class="searchtxt">
 					<h1>SEARCH TEXT</h1>
@@ -129,10 +128,7 @@
 						</div>
 					</form>
 				</ul>
-=======
-			
->>>>>>> 725efea9867ba68d7b59319a1c915908db344059
- 
+
 			</div>
 		</nav>
 	</div>
@@ -179,29 +175,54 @@
 	</div>
 </div>
 
+<!-- ____________________Featured Section ______________________________--> 
+<div class="allcontain">
+	
+
+	<div class="feturedsection">
+		<h1 class="text-center"><span class="bdots">&bullet;</span>Interested<span class="carstxt">Students</span>&bullet;</h1>
+	</div>
+	<div class="feturedimage">
+			<% @matches.each do |student| %>
+				<div class="col-lg-6 costumcol colborder2">
+				<div class="row costumrow">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 txt1colon " style="width: 100%; margin-bottom: 60px; ">
+						<div class="featurecontant" >
+							<h1 style="margin-top: 5%"><%= student.name %></h1>
+                            <p><%= student.email %></p>
+
+			 				<% obj = @professor.professor_student_matches.find_by student_id: student.id %>
+							
+							<%= form_tag(professor_interest_path, method: "post", style: "display:inline") do %>
+								<%= hidden_field_tag(:professor_id, @professor.id) %>
+								<%= hidden_field_tag(:student_id, student.id) %>
+								<% if obj and obj.match %>
+									<p class= 'btn btn-success' style= 'margin-top: 30px; margin-bottom: 30px; margin-left: 30%'>Approved</p>
+								<% else %>
+									<%= submit_tag "Accept", class: 'btn btn-info', style: 'margin-top: 30px; margin-bottom: 30px; margin-left: 30%'%>
+								<% end %>
+
+								<%= link_to 'Read More', student, class: 'btn btn-warning', style: 'float: right; margin-top: 30px; margin-bottom: 30px; margin-right: 30%' %>
+
+							<% end %>
+							
+
+						
+						</div>
+					</div>
+				</div>
+				</div>
+			<% end %>
+	</div>
+</div>
+
+
+<div class="latestcars">
+	<ul class="nav nav-tabs navbar-left latest-navleft">
+	</ul>
+	
+
+
 
 	
-	<div>
-	<h3>Interested students</h3>
-	<ul>
-	<% @matches.each do |student| %>
-
-	<li>
-
-	<% obj = @professor.professor_student_matches.find_by student_id: student.id %>
-	<span><%= student.name %></span>
-	<%= form_tag(professor_interest_path, method: "post", style: "display:inline") do %>
-		<%= hidden_field_tag(:professor_id, @professor.id) %>
-		<%= hidden_field_tag(:student_id, student.id) %>
-		<% if obj and obj.match %>
-			<span style="background-color:green;">Already approved</span>
-		<% else %>
-			<%= submit_tag("Accept") %>
-		<% end %>
-	<% end %>
-
-
-	</li>
-	<% end %>
-	</ul>
-	</div>
+	
