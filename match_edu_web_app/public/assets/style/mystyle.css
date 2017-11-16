@@ -91,25 +91,6 @@ header.masthead {
       margin-bottom: 50px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; } }
 
-.btn {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700; }
-
-.btn-xl {
-  font-size: 18px;
-  padding: 20px 40px; }
-
-.btn-primary {
-  background-color: #fed136;
-  border-color: #fed136; }
-  .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-    background-color: #fec810 !important;
-    border-color: #fec810 !important;
-    color: white; }
-  .btn-primary:active, .btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important; }
-
-
 .socialicon{
 list-style-type: none;
 display: inline-block;
