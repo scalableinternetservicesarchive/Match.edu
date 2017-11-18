@@ -54,6 +54,15 @@
           <div class="intro-lead-in">Welcome To Match.edu!</div>
           <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
           <a class="btn btn-primary btn-lg text-uppercase js-scroll-trigger" href="#services" style="font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 700; font-size: 18px; padding: 15px 35px; background-color: #fed136; border-color: #fed136; background-color: #fec810 !important;border-color: #fec810 !important; color: white; box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;">Tell Me More</a>
+
+          <form class="navbar-form navbar-left searchformmargin" role="search">
+						<div class="form-group">
+							<%= form_tag(root_path, :method => "get", id: "search-form", class: "form-control searchform") do %>
+    						<%= text_field_tag :search, params[:search], placeholder: "Search Professors", class: "form-control searchform" %>
+    						<%= submit_tag "Search", :name => nil, class: 'btn btn-warning btn-lg' %>
+    						<% end %>
+						</div>
+					</form>
         </div>
       </div>
 </header>
