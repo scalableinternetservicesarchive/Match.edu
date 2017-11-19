@@ -5,9 +5,9 @@ class Professor < ApplicationRecord
     has_many :students, :through => :professor_student_matches
     def self.search(search)
     	#Do a search for research areas get relevant ids
-    	ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area LIKE ?", ["%#{search}%"])
+    	ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area LIKE ?", ["%#{search}%"]).limit(10)
     	#Do a search for name, school or department and get relevant ids
-    	ids2 = Professor.select('professors.id').where("name LIKE ? OR school LIKE ? OR department LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    	ids2 = Professor.select('professors.id').where("name LIKE ? OR school LIKE ? OR department LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%").limit(10)
     	#Combine ids and remove duplicates
     	ids1 = ids1.map{ |item| item.id}
     	ids2 = ids2.map{ |item| item.id}
