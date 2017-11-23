@@ -10,6 +10,9 @@ class Professor < ApplicationRecord
     	ids2 = Professor.select('professors.id').where("name LIKE ? OR school LIKE ? OR department LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
     	#Combine ids and remove duplicates
     	ids1 = ids1.map{ |item| item.id}
+        #researchArea = ResearchArea.where(area: search)
+        #professors = researchArea.professors
+        #return professors
     	ids2 = ids2.map{ |item| item.id}
     	ids = ids1 + ids2 - (ids1 & ids2)
 
@@ -25,5 +28,18 @@ class Professor < ApplicationRecord
         ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area like ?", ["%#{search}%"])
         ids1 = ids1.map{ |item| item.id}
         Professor.where(id:ids1)
+    end
+
+    def self.searchByDepartment(selected_department)
+        #Professor.find_by department: selected_department
+        professor_ids = Professor.select('professors.id').where("department LIKE ?","%#{selected_department}%")
+        professor_ids_map = professor_ids.map{ |item| item.id}
+        Professor.where(id:professor_ids_map)
+    end
+    def self.searchBySchool(selected_school)
+        #Professor.find_by school: selected_school
+        professor_ids = Professor.select('professors.id').where("school LIKE ?","%#{selected_school}%")
+        professor_ids_map = professor_ids.map{ |item| item.id}
+        Professor.where(id:professor_ids_map)
     end
 end

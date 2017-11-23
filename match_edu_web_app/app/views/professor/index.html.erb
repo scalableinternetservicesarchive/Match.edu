@@ -86,9 +86,7 @@
 				 			Department of <%= professor.department %><br>				
 				 			</p>
                  
-                            <% professor.research_areas.each do|research_area| %>
-                                <p><%= research_area.area %></p>
-                            <% end %>
+                            
 			 				<p><%= link_to 'View', professor %> <%= link_to 'Edit', edit_professor_path(professor) %></p>
 			 				<button ><%= link_to 'READ MORE', professor %></button>
 						</div>

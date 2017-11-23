@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20171108174149) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "professor_researches", force: :cascade do |t|
+    t.integer "professor_id"
+    t.integer "research_area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "professor_student_matches", force: :cascade do |t|
     t.integer "professor_id"
     t.integer "student_id"
