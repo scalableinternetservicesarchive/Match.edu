@@ -162,7 +162,7 @@ def populate_data
 end
 
 p "Currently #{Professor.count} professor profiles exist"
-if Professor.count != 50001
+if Professor.count == 0
     puts("Populate data")
     populate_data
 else
