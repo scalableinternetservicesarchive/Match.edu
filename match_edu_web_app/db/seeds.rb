@@ -115,8 +115,7 @@ def populate_data
                 "rvrxhqqnluyofoo",
                 "hjsyqlloehdxojd",
                 "sukjryaagunivlc",
-                "eqldbslevphgxud",
-                "xxnnlyotdhzvwjy"
+                "eqldbslevphgxud"
               ]
     research_areas = (0..99).to_a.map do |n|
       ResearchArea.create!(area: list_research_areas[n]) 
