@@ -6,7 +6,7 @@ class ProfessorController < ApplicationController
     if params[:search]
         @professors = Professor.search(params[:search]).order("created_at DESC")
     else
-        @professor = Professor.take(10).order("created_at DESC")
+        puts('Need to do nothing. Query happens once')
     end
   end
 
