@@ -144,6 +144,7 @@ def populate_data
       Time.now.utc.to_s(:db)+"'"+
       ")"}.join(",")
 
+
     ActiveRecord::Base.connection.execute("INSERT INTO students (name, email, researcharea, created_at, updated_at) VALUES #{values}")
 
     values = (0..50000).to_a.map {|u|
@@ -167,8 +168,5 @@ if Professor.count != 50001
 else
     puts("Data alread exists. No need to re-enter data.")
 end
-
-
-
 
 
