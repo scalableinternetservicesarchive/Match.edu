@@ -16,6 +16,7 @@ def populate_data
     p "Cleared existing research areas"
 
     list_research_areas = [
+                "Distributed Systems"
                 "bvoqeikatoswvso",
                 "uuzlxeablrwmgoe",
                 "oqyvnfxxcoarslt",
