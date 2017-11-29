@@ -5,14 +5,14 @@ class StudentsController < ApplicationController
       @professors = Professor.all
       @research_areas = ResearchArea.all
       @recommend = Professor.searchByInterest(@student.researcharea).order("created_at DESC")
-    
-      if params[:selected_research_area] != ''
+
+      if params[:selected_research_area] != '' && params[:selected_research_area] != nil
         @recommend = Professor.searchByInterest(params[:selected_research_area]).order("created_at DESC")
       end
-      if params[:selected_department] != ''
+      if params[:selected_department] != '' && params[:selected_department] != nil
         @recommend = Professor.searchByDepartment(params[:selected_department]).order("created_at DESC")
       end
-      if params[:selected_school] != ''
+      if params[:selected_school] != '' && params[:selected_school] != nil
         @recommend = Professor.searchBySchool(params[:selected_school]).order("created_at DESC")
       end
   end
