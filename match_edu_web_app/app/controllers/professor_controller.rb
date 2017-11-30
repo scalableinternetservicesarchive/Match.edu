@@ -4,7 +4,8 @@ class ProfessorController < ApplicationController
     @professors = Professor.take(10)
     @research_areas = ResearchArea.all
     if params[:search]
-        @professors = Professor.search(params[:search]).order("created_at DESC")
+        @professors = Professor.search(params[:search])
+        puts @professors
     else
         puts('Need to do nothing. Query happens once')
     end

@@ -4,24 +4,8 @@ class Professor < ApplicationRecord
     has_many :professor_student_matches
     has_many :students, :through => :professor_student_matches
     def self.search(search)
-    	#Do a search for research areas get relevant ids
-    	ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area LIKE ?", ["%#{search}%"]).limit(10)
-    	#Do a search for name, school or department and get relevant ids
-    	ids2 = Professor.select('professors.id').where("name LIKE ? OR school LIKE ? OR department LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%").limit(10)
-    	#Combine ids and remove duplicates
-    	ids1 = ids1.map{ |item| item.id}
-        #researchArea = ResearchArea.where(area: search)
-        #professors = researchArea.professors
-        #return professors
-    	ids2 = ids2.map{ |item| item.id}
-    	ids = ids1 + ids2 - (ids1 & ids2)
-
-    	#Major caveat.
-    	#The two queries are done and ids are combined and filtered in Memory.
-    	#This can be a bottleneck if both these queries return a lot of ids also last query would then be inefficient
-
-    	#We have the relevant ids, now find relevant objects.
-    	Professor.where(id: ids)
+    	Professor.find_by_sql("SELECT * FROM professors WHERE name LIKE '%#{search}%' OR school LIKE '%#{search}%' OR department LIKE '%#{search}%' OR id IN (SELECT professor_research_areas.professor_id from professor_research_areas inner join research_areas on
+research_areas.id = professor_research_areas.research_area_id where research_areas.area LIKE '%#{search}%' LIMIT 10) LIMIT 10")
     end
     
     def self.searchByInterest(search)
