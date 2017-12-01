@@ -136,15 +136,17 @@ def populate_data
     ActiveRecord::Base.connection.execute("INSERT INTO professors (name, email, picture, phone, school, department, created_at, updated_at) VALUES #{values}")
 
     #Bulk insert student data
+    
     values = (0..50000).to_a.map {|u| 
       "('"+Faker::Name.name.gsub(/\W/, ' ')+"','"+
       Faker::Internet.email+"','"+
       list_research_areas[u%10]+"','"+
+      Faker::Internet.password+"','"+
       Time.now.utc.to_s(:db)+"','"+
       Time.now.utc.to_s(:db)+"'"+
       ")"}.join(",")
 
-    ActiveRecord::Base.connection.execute("INSERT INTO students (name, email, researcharea, created_at, updated_at) VALUES #{values}")
+    ActiveRecord::Base.connection.execute("INSERT INTO students (name, email, researcharea, password_digest, created_at, updated_at) VALUES #{values}")
 
     values = (0..50000).to_a.map {|u|
       "("+u.to_s+","+
