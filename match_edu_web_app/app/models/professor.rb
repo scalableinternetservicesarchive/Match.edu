@@ -25,9 +25,14 @@ class Professor < ApplicationRecord
     end
     
     def self.searchByInterest(search)
-        ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area like ?", ["%#{search}%"]).limit(9)
-        ids1 = ids1.map{ |item| item.id}
-        Professor.where(id:ids1)
+        #query directly uses join table
+        research_area_id = ResearchArea.where(area: search).pluck(:id)
+        professor_ids = ProfessorResearchArea.where(research_area_id: research_area_id).pluck(:professor_id)
+        Professor.where(id: professor_ids)
+
+        #ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area like ?", ["%#{search}%"])
+        #ids1 = ids1.map{ |item| item.id}
+        #Professor.where(id:ids1)
     end
 
     def self.searchByDepartment(selected_department)
