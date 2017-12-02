@@ -27,7 +27,7 @@ class Professor < ApplicationRecord
     def self.searchByInterest(search)
         #query directly uses join table
         research_area_id = ResearchArea.where(area: search).pluck(:id)
-        professor_ids = ProfessorResearchArea.where(research_area_id: research_area_id).limit(11).pluck(:professor_id)
+        professor_ids = ProfessorResearchArea.where(research_area_id: research_area_id).limit(10).pluck(:professor_id)
         Professor.where(id: professor_ids)
 
         #ids1 = Professor.select('professors.id').joins(professor_research_areas: :research_area).where("research_areas.area like ?", ["%#{search}%"])
