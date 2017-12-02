@@ -90,11 +90,7 @@
 							<%= select_tag :selected_department, 
 								 options_for_select(departments_array),
 								 {include_blank: "Select Department"}%>
-							<% schools_array = Professor.select("DISTINCT(SCHOOL)").each.map {|professor| [professor.school,professor.school] } %>
-							<%= select_tag :selected_school, 
-								 options_for_select(schools_array),
-								 {include_blank: "Select School"}%>
-
+								 
     						<%= submit_tag "Search", :name => nil, class: 'btn btn-warning btn-lg' %>
     						<% end %>
 						</div>
