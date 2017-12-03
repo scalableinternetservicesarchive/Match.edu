@@ -86,11 +86,12 @@
 							<%= select_tag :selected_research_area, 
 								 options_for_select(research_areas_array),
 								 {include_blank: "Select Research Area"} %>
-							<% departments_array = Professor.select("DISTINCT(DEPARTMENT)").each.map {|professor| [professor.department,professor.department] } %>
+							<% cache departments_array = Professor.select("DISTINCT(DEPARTMENT)").each.map {|professor| [professor.department,professor.department] } do%>
 							<%= select_tag :selected_department, 
 								 options_for_select(departments_array),
 								 {include_blank: "Select Department"}%>
-								 
+
+							<% end %>
     						<%= submit_tag "Search", :name => nil, class: 'btn btn-warning btn-lg' %>
     						<% end %>
 						</div>
@@ -152,7 +153,6 @@
 				</div>
 			<% end %>
 	</div>
-	<p>Now let's render us some pagination!</p>
 	<%= will_paginate @recommend_page_results %>
 </div>
 
