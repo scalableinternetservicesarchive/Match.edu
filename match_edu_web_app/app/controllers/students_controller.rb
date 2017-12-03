@@ -41,10 +41,10 @@ class StudentsController < ApplicationController
     @student.skip_password_validation = true
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: 'Profile was successfully updated' }
+        format.html #{ redirect_to @student, notice: 'Profile was successfully updated' }
       else
-        #Rails.logger.info(@student.errors.messages.inspect)
-        format.html { redirect_to @student, notice: 'There was some error' }
+        Rails.logger.info(@student.errors.messages.inspect)
+        format.html #{ redirect_to @student, notice: 'There was some error' }
       end
     end
   end
