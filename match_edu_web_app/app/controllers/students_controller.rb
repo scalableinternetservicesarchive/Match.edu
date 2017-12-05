@@ -6,10 +6,10 @@ class StudentsController < ApplicationController
       @research_areas = ResearchArea.all
       @recommend = Professor.searchByInterest(@student.researcharea)
       
-      #if params[:page] == nil
-        #params[:page] = 1
-      #end
-      #@recommend_page_results = @recommend.paginate(:page => params[:page],:per_page => 5)
+      if params[:page] == nil
+        params[:page] = 1
+      end
+      @recommend_page_results = @recommend.paginate(:page => params[:page],:per_page => 5)
     
       if params[:selected_research_area] != '' && params[:selected_research_area] != nil
         @recommend = Professor.searchByInterest(params[:selected_research_area]).order("created_at DESC")
