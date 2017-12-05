@@ -86,12 +86,10 @@
 							<%= select_tag :selected_research_area, 
 								 options_for_select(research_areas_array),
 								 {include_blank: "Select Research Area"} %>
-							<% cache departments_array = Professor.select("DISTINCT(DEPARTMENT)").each.map {|professor| [professor.department,professor.department] } do%>
+							<% departments_array = Professor.select("DISTINCT(DEPARTMENT)").each.map {|professor| [professor.department,professor.department] }%>
 							<%= select_tag :selected_department, 
 								 options_for_select(departments_array),
 								 {include_blank: "Select Department"}%>
-
-							<% end %>
     						<%= submit_tag "Search", :name => nil, class: 'btn btn-warning btn-lg' %>
     						<% end %>
 						</div>
@@ -111,7 +109,7 @@
 		<h1 class="text-center"><span class="bdots">&bullet;</span>Recommended<span class="carstxt">Professors</span>&bullet;</h1>
 	</div>
 	<div class="feturedimage">
-			<% @recommend_page_results.each do |professor| %>
+			<% @recommend.each do |professor| %>
 				<div class="col-lg-6 costumcol colborder2">
 				<div class="row costumrow">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
@@ -153,7 +151,6 @@
 				</div>
 			<% end %>
 	</div>
-	<%= will_paginate @recommend_page_results %>
 </div>
 
 
